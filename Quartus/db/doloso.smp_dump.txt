@@ -1,0 +1,16 @@
+
+State Machine - |doloso|pre_ew
+Name pre_ew.EW3 pre_ew.EW2 pre_ew.EW1 pre_ew.EW0 pre_ew.EW4 
+pre_ew.EW0 0 0 0 0 0 
+pre_ew.EW1 0 0 1 1 0 
+pre_ew.EW2 0 1 0 1 0 
+pre_ew.EW3 1 0 0 1 0 
+pre_ew.EW4 0 0 0 1 1 
+
+State Machine - |doloso|pre_ns
+Name pre_ns.NS3 pre_ns.NS2 pre_ns.NS1 pre_ns.NS0 pre_ns.NS4 
+pre_ns.NS0 0 0 0 0 0 
+pre_ns.NS1 0 0 1 1 0 
+pre_ns.NS2 0 1 0 1 0 
+pre_ns.NS3 1 0 0 1 0 
+pre_ns.NS4 0 0 0 1 1 
