@@ -1,0 +1,39 @@
+/*============================================
+	         CLOCK DIVIDER
+==============================================
+Description:
+ This module take high requency input clock (clk_in)
+ and divides it down to a lower frequency to produce 
+ 3Hz clock output.
+
+Design Engineer:
+ Felixander B. Doloso
+ Seth Andrei V. Gedalanga
+
+Date:
+ Feb. 18, 2026
+-----------------------------------------------
+*/
+module clk_div(clk_out,clk_led,clk_in);
+ //ports
+ input clk_in;
+ output reg clk_out = 1'b0;
+ output reg clk_led = 1'b0;
+
+ // 3s clock @50MHz
+ parameter integer  freq   = 50_000_000;       // 50MHz by default
+ parameter integer  period = 1;                // Time interval (1 second)
+ localparam integer ticks  = (freq*period)/2;  // Number of ticks per period
+ integer tick_cnt = 0;                         // Count Generator
+ // reg [27:0] tick_cnt = 28'b0;               // count 0..149,999,999
+ 
+ always@(posedge clk_in) begin
+    if(tick_cnt == freq-1) begin 
+       clk_out <= ~clk_out;
+       clk_led <= ~clk_led;
+       tick_cnt <= 25'b0;
+    end
+    else tick_cnt <= tick_cnt + 25'b1;
+
+    end
+endmodule 

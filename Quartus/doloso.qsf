@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX II"
 set_global_assignment -name DEVICE EPM240T100C5
-set_global_assignment -name TOP_LEVEL_ENTITY doloso
+set_global_assignment -name TOP_LEVEL_ENTITY top_doloso
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 25.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "07:56:27  JUNE 22, 2026"
 set_global_assignment -name LAST_QUARTUS_VERSION "25.1std.0 Lite Edition"
@@ -56,7 +56,8 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_global_assignment -name VERILOG_FILE doloso_ns.v
+set_global_assignment -name VERILOG_FILE doloso_ew.v
 set_global_assignment -name VERILOG_FILE top_doloso.v
 set_global_assignment -name VERILOG_FILE clk_div.v
 set_global_assignment -name VERILOG_FILE bcd_7seg.v
-set_global_assignment -name VERILOG_FILE doloso.v

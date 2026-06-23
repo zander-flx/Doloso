@@ -1,0 +1,157 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/18.1
+vbcd_7seg
+Z0 !s110 1782227055
+!i10b 1
+!s100 SzWOn3J4mKj3KJl0AaPQ@0
+IX9k`lC?DgSo_6nQU39[?M3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/Admin/Desktop/Github/Doloso/ModelSim
+w1782220331
+8C:/Users/Admin/Desktop/Github/Doloso/ModelSim/bcd_7seg.v
+FC:/Users/Admin/Desktop/Github/Doloso/ModelSim/bcd_7seg.v
+L0 15
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1782227055.000000
+!s107 C:/Users/Admin/Desktop/Github/Doloso/ModelSim/bcd_7seg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Admin/Desktop/Github/Doloso/ModelSim/bcd_7seg.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vclk_div
+R0
+!i10b 1
+!s100 h;g[mz8STPOOM?MhBz3Og2
+I70n?ng_XWOMTJ@IlVUTSA3
+R1
+R2
+w1782226944
+8C:/Users/Admin/Desktop/Github/Doloso/ModelSim/clk_div.v
+FC:/Users/Admin/Desktop/Github/Doloso/ModelSim/clk_div.v
+L0 17
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Admin/Desktop/Github/Doloso/ModelSim/clk_div.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Admin/Desktop/Github/Doloso/ModelSim/clk_div.v|
+!i113 1
+R5
+R6
+vdoloso_ew
+Z7 !s110 1782227056
+!i10b 1
+!s100 V0U63n=23EhVOUj8d?<lY2
+I;=7ZJL[PH:QYoENn8_cWg0
+R1
+R2
+w1782225709
+8C:/Users/Admin/Desktop/Github/Doloso/ModelSim/doloso_ew.v
+FC:/Users/Admin/Desktop/Github/Doloso/ModelSim/doloso_ew.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z8 !s108 1782227056.000000
+!s107 C:/Users/Admin/Desktop/Github/Doloso/ModelSim/doloso_ew.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Admin/Desktop/Github/Doloso/ModelSim/doloso_ew.v|
+!i113 1
+R5
+R6
+vdoloso_ns
+!s110 1782227633
+!i10b 1
+!s100 XUD>L<^Ln[5[HJ6<6eHUS3
+IbU<]@C2LSC]fYCE<@]R^A1
+R1
+R2
+w1782227630
+8C:/Users/Admin/Desktop/Github/Doloso/ModelSim/doloso_ns.v
+FC:/Users/Admin/Desktop/Github/Doloso/ModelSim/doloso_ns.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1782227633.000000
+!s107 C:/Users/Admin/Desktop/Github/Doloso/ModelSim/doloso_ns.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Admin/Desktop/Github/Doloso/ModelSim/doloso_ns.v|
+!i113 1
+R5
+R6
+vtestbench
+R7
+!i10b 1
+!s100 HZS<z95zFKlK[mDQaYf_K0
+I]PGMDNFOMAA@H1>^^UNRm1
+R1
+R2
+w1782227001
+8C:/Users/Admin/Desktop/Github/Doloso/ModelSim/testbench.v
+FC:/Users/Admin/Desktop/Github/Doloso/ModelSim/testbench.v
+L0 2
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/Admin/Desktop/Github/Doloso/ModelSim/testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Admin/Desktop/Github/Doloso/ModelSim/testbench.v|
+!i113 1
+R5
+R6
+vtop_doloso
+R7
+!i10b 1
+!s100 QK5jB=omVRV7U5c>6UJ6L0
+Ifh=IHIN><G69bTdQkX4[L2
+R1
+R2
+w1782227050
+Z9 8C:/Users/Admin/Desktop/Github/Doloso/ModelSim/top_doloso.v
+Z10 FC:/Users/Admin/Desktop/Github/Doloso/ModelSim/top_doloso.v
+Z11 L0 19
+R3
+r1
+!s85 0
+31
+R8
+Z12 !s107 C:/Users/Admin/Desktop/Github/Doloso/ModelSim/top_doloso.v|
+Z13 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Admin/Desktop/Github/Doloso/ModelSim/top_doloso.v|
+!i113 1
+R5
+R6
+vtop_intersection
+!s110 1782224750
+!i10b 1
+!s100 zT`a;0HGaA9kH=]BhkDcT0
+IOLHUJEA1HF_eifk^^POCg1
+R1
+R2
+w1782224597
+R9
+R10
+R11
+R3
+r1
+!s85 0
+31
+!s108 1782224750.000000
+R12
+R13
+!i113 1
+R5
+R6

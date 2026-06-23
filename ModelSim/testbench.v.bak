@@ -1,0 +1,59 @@
+// testbench for top_intersection
+module testbench;
+    // tb signals 
+    reg clk_in;
+    reg rst_n;
+    reg en;
+    reg ovr;
+    wire clk_led;
+    wire [2:0] ns_car_leds;
+    wire [2:0] ew_car_leds;
+    wire [1:0] ns_ped_leds;
+    wire [1:0] ew_ped_leds;
+    wire [0:6] ns_seg_display;
+    wire [0:6] ew_seg_display;
+
+    // instantiate top-level dut
+    top_doloso dut (
+        .clk_in(clk_in),
+        .rst_n(rst_n),
+        .en(en),
+        .ovr(ovr),
+        .clk_led(clk_led),
+        .ns_car_leds(ns_car_leds),
+        .ew_car_leds(ew_car_leds),
+        .ns_ped_leds(ns_ped_leds),
+        .ew_ped_leds(ew_ped_leds),
+        .ns_seg_display(ns_seg_display),
+        .ew_seg_display(ew_seg_display)
+    );
+
+    initial clk_in = 0;
+    always #1 clk_in = ~clk_in;
+
+    initial begin
+        // initial test
+        rst_n = 0; en = 1;ovr = 0; 
+        repeat(3) @(negedge clk_in);
+		  
+		  // release reset (since active low)
+        rst_n = 1;
+        repeat(150) @(negedge clk_in);
+		  
+        // test override, it should flash the dash symbol on 7 segment display
+        ovr = 1;
+        repeat(50) @(negedge clk_in);
+        
+        // release override
+        ovr = 0;
+        repeat(50) @(negedge clk_in);
+        
+        // test enable switch,it should pause the timer
+        en = 0;
+        repeat(50) @(negedge clk_in);
+        
+        // unpause, and check result
+        en = 1;
+        repeat(50) @(negedge clk_in);
+    end
+endmodule

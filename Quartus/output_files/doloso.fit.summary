@@ -1,11 +1,11 @@
-Fitter Status : Successful - Mon Jun 22 14:53:34 2026
+Fitter Status : Successful - Tue Jun 23 23:18:11 2026
 Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 Revision Name : doloso
-Top-level Entity Name : doloso
+Top-level Entity Name : top_doloso
 Family : MAX II
 Device : EPM240T100C5
 Timing Models : Final
-Total logic elements : 19 / 240 ( 8 % )
-Total pins : 30 / 80 ( 38 % )
+Total logic elements : 130 / 240 ( 54 % )
+Total pins : 29 / 80 ( 36 % )
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for doloso
-Mon Jun 22 14:53:26 2026
+Tue Jun 23 23:18:01 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -13,12 +13,13 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |doloso|pre_ew
-  9. State Machine - |doloso|pre_ns
+  8. State Machine - |top_doloso|doloso_ew:inst_ew|pre_ew
+  9. State Machine - |top_doloso|doloso_ns:inst_ns|pre_ns
  10. Registers Removed During Synthesis
  11. General Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Analysis & Synthesis Messages
+ 13. Parameter Settings for User Entity Instance: clk_div:inst_clk_div
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -45,13 +46,13 @@ on the Quartus Prime software download page.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +-----------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Mon Jun 22 14:53:26 2026           ;
+; Analysis & Synthesis Status ; Successful - Tue Jun 23 23:18:01 2026           ;
 ; Quartus Prime Version       ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name               ; doloso                                          ;
-; Top-level Entity Name       ; doloso                                          ;
+; Top-level Entity Name       ; top_doloso                                      ;
 ; Family                      ; MAX II                                          ;
-; Total logic elements        ; 21                                              ;
-; Total pins                  ; 30                                              ;
+; Total logic elements        ; 140                                             ;
+; Total pins                  ; 29                                              ;
 ; Total virtual pins          ; 0                                               ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                                   ;
 +-----------------------------+-------------------------------------------------+
@@ -63,7 +64,7 @@ on the Quartus Prime software download page.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EPM240T100C5       ;                    ;
-; Top-level entity name                                            ; doloso             ; doloso             ;
+; Top-level entity name                                            ; top_doloso         ; doloso             ;
 ; Family name                                                      ; MAX II             ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -144,62 +145,72 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                        ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                          ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
-; doloso.v                         ; yes             ; User Verilog HDL File  ; C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso.v ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                              ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+; doloso_ns.v                      ; yes             ; User Verilog HDL File  ; C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso_ns.v  ;         ;
+; doloso_ew.v                      ; yes             ; User Verilog HDL File  ; C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso_ew.v  ;         ;
+; top_doloso.v                     ; yes             ; User Verilog HDL File  ; C:/Users/Admin/Desktop/Github/Doloso/Quartus/top_doloso.v ;         ;
+; clk_div.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Admin/Desktop/Github/Doloso/Quartus/clk_div.v    ;         ;
+; bcd_7seg.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Admin/Desktop/Github/Doloso/Quartus/bcd_7seg.v   ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Total logic elements                        ; 21    ;
-;     -- Combinational with no register       ; 10    ;
-;     -- Register only                        ; 2     ;
-;     -- Combinational with a register        ; 9     ;
-;                                             ;       ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 7     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- 2 input functions                    ; 11    ;
-;     -- 1 input functions                    ; 1     ;
-;     -- 0 input functions                    ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 21    ;
-;     -- arithmetic mode                      ; 0     ;
-;     -- qfbk mode                            ; 0     ;
-;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 5     ;
-;     -- asynchronous clear/load mode         ; 11    ;
-;                                             ;       ;
-; Total registers                             ; 11    ;
-; I/O pins                                    ; 30    ;
-; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 11    ;
-; Total fan-out                               ; 101   ;
-; Average fan-out                             ; 1.98  ;
-+---------------------------------------------+-------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Total logic elements                        ; 140    ;
+;     -- Combinational with no register       ; 89     ;
+;     -- Register only                        ; 22     ;
+;     -- Combinational with a register        ; 29     ;
+;                                             ;        ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 52     ;
+;     -- 3 input functions                    ; 3      ;
+;     -- 2 input functions                    ; 60     ;
+;     -- 1 input functions                    ; 3      ;
+;     -- 0 input functions                    ; 0      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 109    ;
+;     -- arithmetic mode                      ; 31     ;
+;     -- qfbk mode                            ; 0      ;
+;     -- register cascade mode                ; 0      ;
+;     -- synchronous clear/load mode          ; 4      ;
+;     -- asynchronous clear/load mode         ; 17     ;
+;                                             ;        ;
+; Total registers                             ; 51     ;
+; Total logic cells in carry chains           ; 32     ;
+; I/O pins                                    ; 29     ;
+; Maximum fan-out node                        ; clk_in ;
+; Maximum fan-out                             ; 34     ;
+; Total fan-out                               ; 473    ;
+; Average fan-out                             ; 2.80   ;
++---------------------------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
-; |doloso                    ; 21 (21)     ; 11           ; 0          ; 30   ; 0            ; 10 (10)      ; 2 (2)             ; 9 (9)            ; 0 (0)           ; 0 (0)      ; |doloso             ; doloso      ; work         ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                             ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name              ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------+-------------+--------------+
+; |top_doloso                ; 140 (0)     ; 51           ; 0          ; 29   ; 0            ; 89 (0)       ; 22 (0)            ; 29 (0)           ; 32 (0)          ; 0 (0)      ; |top_doloso                      ; top_doloso  ; work         ;
+;    |bcd_7seg:inst_ew_seg|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |top_doloso|bcd_7seg:inst_ew_seg ; bcd_7seg    ; work         ;
+;    |bcd_7seg:inst_ns_seg|  ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |top_doloso|bcd_7seg:inst_ns_seg ; bcd_7seg    ; work         ;
+;    |clk_div:inst_clk_div|  ; 77 (77)     ; 34           ; 0          ; 0    ; 0            ; 43 (43)      ; 20 (20)           ; 14 (14)          ; 32 (32)         ; 0 (0)      ; |top_doloso|clk_div:inst_clk_div ; clk_div     ; work         ;
+;    |doloso_ew:inst_ew|     ; 24 (24)     ; 9            ; 0          ; 0    ; 0            ; 15 (15)      ; 1 (1)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |top_doloso|doloso_ew:inst_ew    ; doloso_ew   ; work         ;
+;    |doloso_ns:inst_ns|     ; 25 (25)     ; 8            ; 0          ; 0    ; 0            ; 17 (17)      ; 1 (1)             ; 7 (7)            ; 0 (0)           ; 0 (0)      ; |top_doloso|doloso_ns:inst_ns    ; doloso_ns   ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
 +-----------------------------------------------------------------------------+
-; State Machine - |doloso|pre_ew                                              ;
+; State Machine - |top_doloso|doloso_ew:inst_ew|pre_ew                        ;
 +------------+------------+------------+------------+------------+------------+
 ; Name       ; pre_ew.EW3 ; pre_ew.EW2 ; pre_ew.EW1 ; pre_ew.EW0 ; pre_ew.EW4 ;
 +------------+------------+------------+------------+------------+------------+
@@ -213,7 +224,7 @@ Encoding Type:  One-Hot
 
 Encoding Type:  One-Hot
 +-----------------------------------------------------------------------------+
-; State Machine - |doloso|pre_ns                                              ;
+; State Machine - |top_doloso|doloso_ns:inst_ns|pre_ns                        ;
 +------------+------------+------------+------------+------------+------------+
 ; Name       ; pre_ns.NS3 ; pre_ns.NS2 ; pre_ns.NS1 ; pre_ns.NS0 ; pre_ns.NS4 ;
 +------------+------------+------------+------------+------------+------------+
@@ -225,26 +236,20 @@ Encoding Type:  One-Hot
 +------------+------------+------------+------------+------------+------------+
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; t_ew[1]                                ; Merged with t_ew[3]                    ;
-; pre_ew~4                               ; Lost fanout                            ;
-; pre_ew~5                               ; Lost fanout                            ;
-; pre_ew~7                               ; Lost fanout                            ;
-; pre_ns~4                               ; Lost fanout                            ;
-; pre_ns~5                               ; Lost fanout                            ;
-; pre_ns~7                               ; Lost fanout                            ;
-; pre_ns.NS4                             ; Merged with pre_ew.EW4                 ;
-; pre_ew.EW1                             ; Stuck at GND due to stuck port data_in ;
-; pre_ew.EW2                             ; Stuck at GND due to stuck port data_in ;
-; pre_ew.EW3                             ; Stuck at GND due to stuck port data_in ;
-; pre_ew.EW0                             ; Merged with pre_ew.EW4                 ;
-; t_ew[2]                                ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 13 ;                                        ;
-+----------------------------------------+----------------------------------------+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++---------------------------------------+------------------------------------------+
+; Register name                         ; Reason for Removal                       ;
++---------------------------------------+------------------------------------------+
+; doloso_ew:inst_ew|pre_ew~4            ; Lost fanout                              ;
+; doloso_ew:inst_ew|pre_ew~5            ; Lost fanout                              ;
+; doloso_ew:inst_ew|pre_ew~7            ; Lost fanout                              ;
+; doloso_ns:inst_ns|pre_ns~4            ; Lost fanout                              ;
+; doloso_ns:inst_ns|pre_ns~5            ; Lost fanout                              ;
+; doloso_ns:inst_ns|pre_ns~7            ; Lost fanout                              ;
+; doloso_ns:inst_ns|pre_ns.NS4          ; Merged with doloso_ew:inst_ew|pre_ew.EW4 ;
+; Total Number of Removed Registers = 7 ;                                          ;
++---------------------------------------+------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -252,25 +257,39 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 11    ;
+; Total registers                              ; 51    ;
 ; Number of registers using Synchronous Clear  ; 4     ;
-; Number of registers using Synchronous Load   ; 1     ;
-; Number of registers using Asynchronous Clear ; 11    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 17    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 6     ;
+; Number of registers using Clock Enable       ; 14    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |doloso|t_ns[1]            ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |doloso|pre_ew             ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |doloso|pre_ew             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top_doloso|doloso_ew:inst_ew|t[3]   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top_doloso|doloso_ns:inst_ns|t[3]   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top_doloso|doloso_ew:inst_ew|pre_ew ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top_doloso|doloso_ew:inst_ew|pre_ew ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top_doloso|doloso_ns:inst_ns|pre_ns ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clk_div:inst_clk_div ;
++----------------+----------+---------------------------------------+
+; Parameter Name ; Value    ; Type                                  ;
++----------------+----------+---------------------------------------+
+; PERIOD_OUT     ; 1        ; Signed Integer                        ;
+; FREQ_IN        ; 50000000 ; Signed Integer                        ;
+; TICKS          ; 25000000 ; Signed Integer                        ;
++----------------+----------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------+
@@ -279,42 +298,36 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Mon Jun 22 14:52:58 2026
+    Info: Processing started: Tue Jun 23 23:17:42 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off doloso -c doloso
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file doloso_ns.v
+    Info (12023): Found entity 1: doloso_ns File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso_ns.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file doloso_ew.v
+    Info (12023): Found entity 1: doloso_ew File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso_ew.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file top_doloso.v
-    Info (12023): Found entity 1: top_doloso File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/top_doloso.v Line: 2
+    Info (12023): Found entity 1: top_doloso File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/top_doloso.v Line: 19
 Info (12021): Found 1 design units, including 1 entities, in source file clk_div.v
     Info (12023): Found entity 1: clk_div File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/clk_div.v Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file bcd_7seg.v
     Info (12023): Found entity 1: bcd_7seg File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/bcd_7seg.v Line: 15
-Info (12021): Found 1 design units, including 1 entities, in source file doloso.v
-    Info (12023): Found entity 1: doloso File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso.v Line: 17
-Info (12127): Elaborating entity "doloso" for the top level hierarchy
-Info (10264): Verilog HDL Case Statement information at doloso.v(92): all case item expressions in this case statement are onehot File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso.v Line: 92
-Info (10264): Verilog HDL Case Statement information at doloso.v(102): all case item expressions in this case statement are onehot File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso.v Line: 102
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "ew_car[0]" is stuck at VCC File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso.v Line: 25
-    Warning (13410): Pin "ew_car[1]" is stuck at GND File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso.v Line: 25
-    Warning (13410): Pin "ew_car[2]" is stuck at GND File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso.v Line: 25
-    Warning (13410): Pin "ew_ped[0]" is stuck at GND File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso.v Line: 26
-    Warning (13410): Pin "ew_ped[1]" is stuck at VCC File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso.v Line: 26
-    Warning (13410): Pin "timer_ew[2]" is stuck at GND File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso.v Line: 30
-    Warning (13410): Pin "state_ns[3]" is stuck at GND File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso.v Line: 27
-    Warning (13410): Pin "state_ew[0]" is stuck at GND File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso.v Line: 28
-    Warning (13410): Pin "state_ew[1]" is stuck at GND File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso.v Line: 28
-    Warning (13410): Pin "state_ew[2]" is stuck at GND File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso.v Line: 28
-    Warning (13410): Pin "state_ew[3]" is stuck at GND File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso.v Line: 28
+Info (12127): Elaborating entity "top_doloso" for the top level hierarchy
+Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst_clk_div" File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/top_doloso.v Line: 44
+Info (12128): Elaborating entity "doloso_ns" for hierarchy "doloso_ns:inst_ns" File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/top_doloso.v Line: 55
+Info (10264): Verilog HDL Case Statement information at doloso_ns.v(48): all case item expressions in this case statement are onehot File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso_ns.v Line: 48
+Info (12128): Elaborating entity "doloso_ew" for hierarchy "doloso_ew:inst_ew" File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/top_doloso.v Line: 66
+Info (10264): Verilog HDL Case Statement information at doloso_ew.v(48): all case item expressions in this case statement are onehot File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/doloso_ew.v Line: 48
+Info (12128): Elaborating entity "bcd_7seg" for hierarchy "bcd_7seg:inst_ns_seg" File: C:/Users/Admin/Desktop/Github/Doloso/Quartus/top_doloso.v Line: 72
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
-Info (21057): Implemented 51 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 169 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 26 output pins
-    Info (21061): Implemented 21 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info (21059): Implemented 25 output pins
+    Info (21061): Implemented 140 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4721 megabytes
-    Info: Processing ended: Mon Jun 22 14:53:26 2026
-    Info: Elapsed time: 00:00:28
-    Info: Total CPU time (on all processors): 00:00:46
+    Info: Processing ended: Tue Jun 23 23:18:01 2026
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:42
 
 
