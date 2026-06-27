@@ -39,7 +39,7 @@ module doloso_ew (ew_car,ew_ped,timer_ew,clk,rst_n,en,ovr);
 		
 	else if(ovr)  begin
 		pre_ew <= EW4;
-		t <= clk? 4'd10:4'd11;
+		t <= clk? 4'(d10):(4'd11);
 	    end
 	else if(en) begin
 		pre_ew <= nxt_ew;
@@ -79,7 +79,7 @@ module doloso_ew (ew_car,ew_ped,timer_ew,clk,rst_n,en,ovr);
 				
 				EW4: begin
 					ew_car = 3'b001;
-					ew_ped = 2'b10;
+					ew_ped = 2'b01;
 				end //end of EW4
 				
 				default: begin 
@@ -88,5 +88,5 @@ module doloso_ew (ew_car,ew_ped,timer_ew,clk,rst_n,en,ovr);
 				end //end of default
 			endcase //end of case(pre_ew)
 		end //end of always@(pre_ns)
-assign timer_ns = t;
+assign timer_ew = t;
 endmodule

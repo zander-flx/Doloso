@@ -14,23 +14,16 @@ module testbench;
     wire [0:6] ew_seg_display;
 
     // instantiate top-level dut
-    top_doloso dut (
-        .clk_in(clk_in),
-        .rst_n(rst_n),
-        .en(en),
-        .ovr(ovr),
-        .clk_led(clk_led),
-        .ns_car_leds(ns_car_leds),
-        .ew_car_leds(ew_car_leds),
-        .ns_ped_leds(ns_ped_leds),
-        .ew_ped_leds(ew_ped_leds),
-        .ns_seg_display(ns_seg_display),
-        .ew_seg_display(ew_seg_display)
-    );
+    top_doloso dut(
+	ns_car_leds,
+ew_car_leds,
+ns_ped_leds,
+ew_ped_leds,
+ns_seg_display,ew_seg_display,clk_in,rst_n_ew,rst_n_ns,en_ns,en_ew,ovr_ew,ovr_ns,clk_led);
 
     initial clk_in = 0;
     always #1 clk_in = ~clk_in;
-    defparam dut.inst_clk_div.FREQ_IN = 10;
+    defparam dut.inst_clk_div.FREQ_IN = 5;
 
     initial begin
         // initial test
@@ -39,7 +32,7 @@ module testbench;
 		  
 		  // release reset (since active low)
         rst_n = 1;
-        repeat(150) @(negedge clk_in);
+        repeat(50) @(negedge clk_in);
 		  
         // test override, it should flash the dash symbol on 7 segment display
         ovr = 1;

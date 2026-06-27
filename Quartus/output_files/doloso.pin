@@ -63,82 +63,82 @@ CHIP  "doloso"  ASSIGNED TO AN: EPM240T100C5
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
-GND*                         : 1         :        :                   :         : 2         :                
+ns_car_leds[2]               : 1         : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 2         :        :                   :         : 1         :                
 GND*                         : 3         :        :                   :         : 1         :                
-GND*                         : 4         :        :                   :         : 1         :                
-GND*                         : 5         :        :                   :         : 1         :                
-clk_led                      : 6         : output : 3.3-V LVTTL       :         : 1         : N              
+ns_car_leds[1]               : 4         : output : 3.3-V LVTTL       :         : 1         : Y              
+ns_car_leds[0]               : 5         : output : 3.3-V LVTTL       :         : 1         : Y              
+GND*                         : 6         :        :                   :         : 1         :                
 GND*                         : 7         :        :                   :         : 1         :                
-GND*                         : 8         :        :                   :         : 1         :                
+ns_seg_display[0]            : 8         : output : 3.3-V LVTTL       :         : 1         : Y              
 VCCIO1                       : 9         : power  :                   : 3.3V    : 1         :                
 GNDIO                        : 10        : gnd    :                   :         :           :                
 GNDINT                       : 11        : gnd    :                   :         :           :                
-rst_n                        : 12        : input  : 3.3-V LVTTL       :         : 1         : N              
+clk_in                       : 12        : input  : 3.3-V LVTTL       :         : 1         : Y              
 VCCINT                       : 13        : power  :                   : 2.5V/3.3V :           :                
-clk_in                       : 14        : input  : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : 15        :        :                   :         : 1         :                
+GND*                         : 14        :        :                   :         : 1         :                
+ns_seg_display[1]            : 15        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : 16        :        :                   :         : 1         :                
 GND*                         : 17        :        :                   :         : 1         :                
-GND*                         : 18        :        :                   :         : 1         :                
-GND*                         : 19        :        :                   :         : 1         :                
+ns_seg_display[2]            : 18        : output : 3.3-V LVTTL       :         : 1         : Y              
+ns_seg_display[3]            : 19        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : 20        :        :                   :         : 1         :                
-GND*                         : 21        :        :                   :         : 1         :                
+ns_seg_display[4]            : 21        : output : 3.3-V LVTTL       :         : 1         : Y              
 TMS                          : 22        : input  :                   :         : 1         :                
 TDI                          : 23        : input  :                   :         : 1         :                
 TCK                          : 24        : input  :                   :         : 1         :                
 TDO                          : 25        : output :                   :         : 1         :                
-GND*                         : 26        :        :                   :         : 1         :                
+ns_seg_display[5]            : 26        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : 27        :        :                   :         : 1         :                
 GND*                         : 28        :        :                   :         : 1         :                
-GND*                         : 29        :        :                   :         : 1         :                
-GND*                         : 30        :        :                   :         : 1         :                
+ns_seg_display[6]            : 29        : output : 3.3-V LVTTL       :         : 1         : Y              
+ew_seg_display[0]            : 30        : output : 3.3-V LVTTL       :         : 1         : Y              
 VCCIO1                       : 31        : power  :                   : 3.3V    : 1         :                
 GNDIO                        : 32        : gnd    :                   :         :           :                
 GND*                         : 33        :        :                   :         : 1         :                
 GND*                         : 34        :        :                   :         : 1         :                
-GND*                         : 35        :        :                   :         : 1         :                
-ns_car_leds[2]               : 36        : output : 3.3-V LVTTL       :         : 1         : N              
-ns_seg_display[1]            : 37        : output : 3.3-V LVTTL       :         : 1         : N              
-ns_car_leds[1]               : 38        : output : 3.3-V LVTTL       :         : 1         : N              
-ns_car_leds[0]               : 39        : output : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : 40        :        :                   :         : 1         :                
-en                           : 41        : input  : 3.3-V LVTTL       :         : 1         : N              
+ew_seg_display[1]            : 35        : output : 3.3-V LVTTL       :         : 1         : Y              
+ew_seg_display[2]            : 36        : output : 3.3-V LVTTL       :         : 1         : Y              
+GND*                         : 37        :        :                   :         : 1         :                
+GND*                         : 38        :        :                   :         : 1         :                
+ew_seg_display[3]            : 39        : output : 3.3-V LVTTL       :         : 1         : Y              
+ew_seg_display[4]            : 40        : output : 3.3-V LVTTL       :         : 1         : Y              
+GND*                         : 41        :        :                   :         : 1         :                
 GND*                         : 42        :        :                   :         : 1         :                
-ns_seg_display[3]            : 43        : output : 3.3-V LVTTL       :         : 1         : N              
-ns_seg_display[6]            : 44        : output : 3.3-V LVTTL       :         : 1         : N              
+ew_seg_display[5]            : 43        : output : 3.3-V LVTTL       :         : 1         : Y              
+ew_seg_display[6]            : 44        : output : 3.3-V LVTTL       :         : 1         : Y              
 VCCIO1                       : 45        : power  :                   : 3.3V    : 1         :                
 GNDIO                        : 46        : gnd    :                   :         :           :                
-ns_seg_display[0]            : 47        : output : 3.3-V LVTTL       :         : 1         : N              
-ns_seg_display[2]            : 48        : output : 3.3-V LVTTL       :         : 1         : N              
-ew_car_leds[0]               : 49        : output : 3.3-V LVTTL       :         : 1         : N              
-ew_ped_leds[0]               : 50        : output : 3.3-V LVTTL       :         : 1         : N              
-ew_ped_leds[1]               : 51        : output : 3.3-V LVTTL       :         : 1         : N              
-ovr                          : 52        : input  : 3.3-V LVTTL       :         : 2         : N              
-ew_car_leds[2]               : 53        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : 47        :        :                   :         : 1         :                
+GND*                         : 48        :        :                   :         : 1         :                
+ew_car_leds[2]               : 49        : output : 3.3-V LVTTL       :         : 1         : Y              
+ew_car_leds[1]               : 50        : output : 3.3-V LVTTL       :         : 1         : Y              
+GND*                         : 51        :        :                   :         : 1         :                
+GND*                         : 52        :        :                   :         : 2         :                
+ew_car_leds[0]               : 53        : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 54        :        :                   :         : 2         :                
 GND*                         : 55        :        :                   :         : 2         :                
-ew_car_leds[1]               : 56        : output : 3.3-V LVTTL       :         : 2         : N              
-ns_seg_display[5]            : 57        : output : 3.3-V LVTTL       :         : 2         : N              
-ns_ped_leds[1]               : 58        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : 56        :        :                   :         : 2         :                
+GND*                         : 57        :        :                   :         : 2         :                
+GND*                         : 58        :        :                   :         : 2         :                
 VCCIO2                       : 59        : power  :                   : 3.3V    : 2         :                
 GNDIO                        : 60        : gnd    :                   :         :           :                
-ns_ped_leds[0]               : 61        : output : 3.3-V LVTTL       :         : 2         : N              
-ns_seg_display[4]            : 62        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : 61        :        :                   :         : 2         :                
+GND*                         : 62        :        :                   :         : 2         :                
 VCCINT                       : 63        : power  :                   : 2.5V/3.3V :           :                
-ew_seg_display[3]            : 64        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : 64        :        :                   :         : 2         :                
 GNDINT                       : 65        : gnd    :                   :         :           :                
-ew_seg_display[1]            : 66        : output : 3.3-V LVTTL       :         : 2         : N              
-ew_seg_display[5]            : 67        : output : 3.3-V LVTTL       :         : 2         : N              
-ew_seg_display[2]            : 68        : output : 3.3-V LVTTL       :         : 2         : N              
-ew_seg_display[6]            : 69        : output : 3.3-V LVTTL       :         : 2         : N              
-ew_seg_display[0]            : 70        : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : 66        :        :                   :         : 2         :                
+GND*                         : 67        :        :                   :         : 2         :                
+GND*                         : 68        :        :                   :         : 2         :                
+GND*                         : 69        :        :                   :         : 2         :                
+GND*                         : 70        :        :                   :         : 2         :                
 GND*                         : 71        :        :                   :         : 2         :                
-GND*                         : 72        :        :                   :         : 2         :                
-GND*                         : 73        :        :                   :         : 2         :                
-ew_seg_display[4]            : 74        : output : 3.3-V LVTTL       :         : 2         : N              
+ovr                          : 72        : input  : 3.3-V LVTTL       :         : 2         : Y              
+en                           : 73        : input  : 3.3-V LVTTL       :         : 2         : Y              
+GND*                         : 74        :        :                   :         : 2         :                
 GND*                         : 75        :        :                   :         : 2         :                
-GND*                         : 76        :        :                   :         : 2         :                
+rst_n                        : 76        : input  : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 77        :        :                   :         : 2         :                
 GND*                         : 78        :        :                   :         : 2         :                
 GNDIO                        : 79        : gnd    :                   :         :           :                
@@ -153,13 +153,13 @@ GND*                         : 87        :        :                   :         
 GND*                         : 88        :        :                   :         : 2         :                
 GND*                         : 89        :        :                   :         : 2         :                
 GND*                         : 90        :        :                   :         : 2         :                
-GND*                         : 91        :        :                   :         : 2         :                
+ew_ped_leds[0]               : 91        : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 92        :        :                   :         : 2         :                
 GNDIO                        : 93        : gnd    :                   :         :           :                
 VCCIO2                       : 94        : power  :                   : 3.3V    : 2         :                
 GND*                         : 95        :        :                   :         : 2         :                
-GND*                         : 96        :        :                   :         : 2         :                
-GND*                         : 97        :        :                   :         : 2         :                
+ew_ped_leds[1]               : 96        : output : 3.3-V LVTTL       :         : 2         : Y              
+ns_ped_leds[0]               : 97        : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 98        :        :                   :         : 2         :                
-GND*                         : 99        :        :                   :         : 2         :                
-GND*                         : 100       :        :                   :         : 2         :                
+clk_led                      : 99        : output : 3.3-V LVTTL       :         : 2         : Y              
+ns_ped_leds[1]               : 100       : output : 3.3-V LVTTL       :         : 2         : Y              

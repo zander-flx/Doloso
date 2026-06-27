@@ -9,19 +9,21 @@ Description:
   enable/pause function.
 
 Design Engineer:
-  Pamposa, Rogelio III, V.
-  Caro, Mark Denzen, P.
-  Emolaga, Roxie Elaine, V.
+  Doloso, Felixander B.
+  Gedalanga, Seth Andrei V.
 
 Date:
   12 June 2026
 ================================================================*/
-module top_doloso (ns_car_leds,ew_car_leds,ns_ped_leds,ew_ped_leds,ns_seg_display,ew_seg_display,clk_in,rst_n,en,ovr,clk_led);
+module top_doloso (ns_car_leds,ew_car_leds,ns_ped_leds,ew_ped_leds,ns_seg_display,ew_seg_display,clk_in,rst_n_ew,rst_n_ns,en_ns,en_ew,ovr_ew,ovr_ns,clk_led);
     // initial input wires
     input clk_in;
-    input rst_n;
-    input en;
-    input ovr;
+    input rst_n_ew;
+    input rst_n_ns;
+    input en_ns;
+    input en_ew;
+    input ovr_ew;
+    input ovr_ns;
     
     output clk_led;
     output [2:0] ns_car_leds;
@@ -46,9 +48,9 @@ module top_doloso (ns_car_leds,ew_car_leds,ns_ped_leds,ew_ped_leds,ns_seg_displa
     // n-s controller
     doloso_ns inst_ns (
         .clk      (clk_w),
-        .rst_n    (rst_n),
-        .en       (en),
-        .ovr      (ovr),
+        .rst_n    (rst_n_ns),
+        .en       (en_ns),
+        .ovr      (ovr_ns),
         .ns_car   (ns_car_leds),
         .ns_ped   (ns_ped_leds),
         .timer_ns (timer_ns_wire)
@@ -57,9 +59,9 @@ module top_doloso (ns_car_leds,ew_car_leds,ns_ped_leds,ew_ped_leds,ns_seg_displa
     // e-w controller
     doloso_ew inst_ew (
         .clk      (clk_w),
-        .rst_n    (rst_n),
-        .en       (en),
-        .ovr      (ovr),
+        .rst_n    (rst_n_ew),
+        .en       (en_ew),
+        .ovr      (ovr_ew),
         .ew_car   (ew_car_leds),
         .ew_ped   (ew_ped_leds),
         .timer_ew (timer_ew_wire)

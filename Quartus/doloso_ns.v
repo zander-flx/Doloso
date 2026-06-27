@@ -46,11 +46,11 @@ module doloso_ns (ns_car,ns_ped,timer_ns,clk,rst_n,en,ovr);
 	
 		//Check timer
 		case(pre_ns)
-			NS0: t <= (t == 4'd2)? (4'b0001):(t - 4'b0001);
+			NS0: t <= (t == 4'd0)? (4'b0001):(t - 4'b0001);
 			NS1: t <= (t == 4'd0)? (4'b0111):(t - 4'b0001);
-			NS2: t <= (t == 4'd0)? (4'b0001):(t - 4'b0001);
+			NS2: t <= (t == 4'd2)? (4'b0001):(t - 4'b0001);
  			NS3: t <= (t == 4'd0)? (4'b1010):(t - 4'b0001);
-			default: t <= 4'b1010;
+			default: t <= 4'b0111;
 		endcase //end of case(pre_ew)
 	    end //end of else if(en)
 	end //end of always @(posedge clk or negedge rst_n)
@@ -58,33 +58,33 @@ module doloso_ns (ns_car,ns_ped,timer_ns,clk,rst_n,en,ovr);
 	always@(pre_ns) begin
 		case(pre_ns)
 				NS0: begin
-					ns_car = 3'b001;
-					ns_ped = 2'b10;
+					ns_car = 3'b100;
+					ns_ped = 2'b01;
 				end //end of EW0
 				
 				NS1: begin
-					ns_car = 3'b001;
+					ns_car = 3'b010;
 					ns_ped = 2'b01;
 				end //end of EW1
 				
 				NS2: begin
-					ns_car = 3'b100;
-					ns_ped = 2'b01;
+					ns_car = 3'b001;
+					ns_ped = 2'b10;
 				end //end of EW2
 				
  				NS3: begin
-					ns_car = 3'b010;
+					ns_car = 3'b001;
 					ns_ped = 2'b01;
 				end //end of EW3
 				
 				NS4: begin
 					ns_car = 3'b001;
-					ns_ped = 2'b10;
+					ns_ped = 2'b01;
 				end //end of EW4
 				
 				default: begin 
-					ns_car = 3'b001;
-					ns_ped = 2'b10;
+					ns_car = 3'b100;
+					ns_ped = 2'b01;
 				end //end of default
 			endcase //end of case(pre_ew)
 		end //end of always@(pre_ns)

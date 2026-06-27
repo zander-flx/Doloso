@@ -79,7 +79,7 @@ module doloso_ew (ew_car,ew_ped,timer_ew,clk,rst_n,en,ovr);
 				
 				EW4: begin
 					ew_car = 3'b001;
-					ew_ped = 2'b10;
+					ew_ped = 2'b01;
 				end //end of EW4
 				
 				default: begin 

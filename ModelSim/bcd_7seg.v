@@ -30,7 +30,7 @@ module bcd_7seg(leds, bcd);
             4'd7: leds = 7'b1110000; 
             4'd8: leds = 7'b1111111;
             4'd9: leds = 7'b1110011;
-	    4'd10: leds = 7'b0000001;
+	    4'd10: leds = 7'b0000001;//edit for override
             4'd11: leds = 7'b0000000;
             default: leds = 7'b0000001;
         endcase

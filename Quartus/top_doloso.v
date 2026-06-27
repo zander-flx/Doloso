@@ -9,14 +9,14 @@ Description:
   enable/pause function.
 
 Design Engineer:
-  Pamposa, Rogelio III, V.
-  Caro, Mark Denzen, P.
-  Emolaga, Roxie Elaine, V.
+  Doloso, Felixander B.
+  Gedalanga, Seth Andrei V.
 
 Date:
   12 June 2026
 ================================================================*/
-module top_doloso (ns_car_leds,ew_car_leds,ns_ped_leds,ew_ped_leds,ns_seg_display,ew_seg_display,clk_in,rst_n,en,ovr,clk_led);
+module top_doloso (ns_car_leds,ew_car_leds,ns_ped_leds,ew_ped_leds,ns_seg_display,ew_seg_display,clk_in,
+						rst_n,en,ovr,clk_led);
     // initial input wires
     input clk_in;
     input rst_n;
@@ -76,5 +76,4 @@ module top_doloso (ns_car_leds,ew_car_leds,ns_ped_leds,ew_ped_leds,ns_seg_displa
         .leds (ew_seg_display),
         .bcd  (timer_ew_wire)
     );
-
 endmodule
